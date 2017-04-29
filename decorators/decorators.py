@@ -3,11 +3,12 @@ from time import time as current_time
 from utils import get_args, get_kwargs
 
 def timer(func):
-    def inner(*args):
+    def inner(*args, **kwargs):
         start_time = current_time()
-        func(*args)
+        result = func(*args, **kwargs)
         end_time = current_time()
-        return end_time - start_time
+        print 'Execution time: {0}'.format(end_time - start_time)
+        return result
     return inner
 
 def log_func_signature(func):

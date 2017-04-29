@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+	<title>Fib Sequence</title>
+    </head>
+
+    {% set index = 1 %}
+    <body>
+	<table>
+	    
+	    {% for value in fib_sequence %}
+		<tr>
+		    <td>{{ index }}</td>
+		    <td>{{ value }}</td>
+		    {% set index = index + 1 %}
+		</tr>
+	    {% endfor %}
+	</table>
+    </body>
+</html>
